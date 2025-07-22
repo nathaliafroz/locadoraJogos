@@ -2,6 +2,7 @@ package edu.ifma.labd.modelo;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,5 +23,8 @@ public class Locacao {
 
     @OneToMany(mappedBy = "locacao", cascade = CascadeType.ALL)
     private List<UtilizacaoConsole> utilizacoesConsoles = new ArrayList<>();
+
+    @Column(precision = 10, scale = 2)
+    private BigDecimal valorTotal;
 }
 
