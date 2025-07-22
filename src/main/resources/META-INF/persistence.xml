@@ -7,6 +7,17 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
 
+        <class>edu.ifma.labd.modelo.Cliente</class>
+        <class>edu.ifma.labd.modelo.Locacao</class>
+        <class>edu.ifma.labd.modelo.UtilizacaoConsole</class>
+        <class>edu.ifma.labd.modelo.Console</class>
+        <class>edu.ifma.labd.modelo.Acessorio</class>
+        <class>edu.ifma.labd.modelo.Plataforma</class>
+        <class>edu.ifma.labd.modelo.Jogo</class>
+        <class>edu.ifma.labd.modelo.ItemLocacao</class>
+        <class>edu.ifma.labd.modelo.PrecoPlataforma</class>
+
+
         <properties>
             <!-- Atualize para jakarta.persistence.* -->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
