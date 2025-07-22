@@ -5,6 +5,10 @@
 
     <persistence-unit name="locadora" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+        <!-- Permitir escaneamento automático de entidades -->
+        <exclude-unlisted-classes>false</exclude-unlisted-classes>
+
+        <!-- Entidades da etapa 1 -->
 
 
         <class>edu.ifma.labd.modelo.Cliente</class>
