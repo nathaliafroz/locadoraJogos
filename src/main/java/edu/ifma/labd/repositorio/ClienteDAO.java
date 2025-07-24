@@ -21,4 +21,6 @@ public class ClienteDAO extends GenericDAO<Cliente> {
             return null;
         }
     }
+
+
 }

@@ -1,11 +1,15 @@
 package edu.ifma.labd.servico;
 
+import edu.ifma.labd.modelo.Console;
 import edu.ifma.labd.repositorio.JogoDAO;
 import edu.ifma.labd.repositorio.PlataformaDAO;
 import edu.ifma.labd.repositorio.PrecoPlataformaDAO;
 import edu.ifma.labd.modelo.Jogo;
 import edu.ifma.labd.modelo.Plataforma;
 import edu.ifma.labd.modelo.PrecoPlataforma;
+import edu.ifma.labd.util.JPAUtil;
+import jakarta.persistence.EntityManager;
+
 import java.math.BigDecimal;
 
 public class JogoService {
@@ -61,4 +65,19 @@ public class JogoService {
             precoPlataformaDAO.fechar();
         }
     }
+
+    public Console cadastrarConsole(String nome, BigDecimal precoHora) {
+        EntityManager em = JPAUtil.getEntityManager();
+        Console console = new Console();
+        console.setNome(nome);
+        console.setPrecoPorHora(precoHora);
+
+        em.getTransaction().begin();
+        em.persist(console);
+        em.getTransaction().commit();
+        em.close();
+
+        return console;
+    }
+
 }
